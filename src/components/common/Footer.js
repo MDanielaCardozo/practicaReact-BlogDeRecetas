@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            
-        </div>
+        <div className='footer text-center bg-dark text-light'>
+        <p className='pt-4'>Blog de recetas - &copy; Todos los derechos reservados.</p>
+    </div>
     );
 };
 
