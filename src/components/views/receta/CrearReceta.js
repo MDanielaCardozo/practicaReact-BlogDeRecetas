@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { cantidadCaracteres } from "./helpers";
+import { cantidadCaracteres } from "./Helpers";
 import { useNavigate } from "react-router-dom";
 
 const CrearReceta = () => {
@@ -86,10 +86,10 @@ const CrearReceta = () => {
           <Form.Label>Categorías*</Form.Label>
           <Form.Select onChange={(e) => setCategoria(e.target.value)}>
             <option value=''>Seleccione una opcion</option>
-            <option value='bebida-caliente'>Almuerzos</option>
-            <option value='bebida-fria'>Cenas</option>
-            <option value='dulce'>Postres</option>
-            <option value='salado'>Dips</option>
+            <option value='Almuerzos'>Almuerzos</option>
+            <option value='Cenas'>Cenas</option>
+            <option value='Postres'>Postres</option>
+            <option value='Dips'>Dips</option>
           </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit">

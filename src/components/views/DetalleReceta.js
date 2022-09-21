@@ -35,7 +35,6 @@ const DetalleReceta = () => {
                 <h3>{receta.nombreReceta}</h3>
                 <hr/>
                 <Badge bg="success">{receta.categoria}</Badge>
-                <p className='mt-3'><b>Precio: ${receta.precio}</b></p>
                 </Col>
             </Row>
         </Card>

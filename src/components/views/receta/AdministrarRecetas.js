@@ -33,7 +33,7 @@ const AdministrarRecetas = () => {
     <section className="container">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4">Recetas disponibles</h1>
-        <Link to='/administrar/Receta/crear' className="btn btn-primary">Agregar</Link>
+        <Link to='/administrar/receta/crear' className="btn btn-primary">Agregar</Link>
       </div>
       <hr />
       <Table responsive striped bordered hover>

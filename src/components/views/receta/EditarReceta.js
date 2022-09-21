@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { cantidadCaracteres } from './helpers';
+import { cantidadCaracteres } from './Helpers';
 
 const EditarReceta = () => {
     //Traer el parametro
@@ -38,13 +38,12 @@ const EditarReceta = () => {
         console.log(nombreRecetaRef)
         console.log(nombreRecetaRef.current)
         console.log(nombreRecetaRef.current.value)
-        if(cantidadCaracteres(nombreRecetaRef.current.value) && validarPrecio(precioRef.current.value)){
+        if(cantidadCaracteres(nombreRecetaRef.current.value)){
 
             //crear un objeto con los datos modificados
             const recetaEditar = {
                 nombreReceta: nombreRecetaRef.current.value,
                 imagen: imagenRef.current.value,
-                precio: precioRef.current.value,
                 categoria: receta.categoria
             }
             console.log(recetaEditar);
@@ -55,7 +54,7 @@ const EditarReceta = () => {
                     headers:{
                         "Content-Type":"application/json"
                     },
-                    body: JSON.stringify(RecetaEditar)
+                    body: JSON.stringify(recetaEditar)
                     })
                     if(resp.status === 200){
                         Swal.fire(
@@ -84,7 +83,7 @@ const EditarReceta = () => {
           <Form.Label>Nombre de la Receta*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Café"
+            placeholder="Ej: Paella"
             defaultValue={receta.nombreReceta}
             ref={nombreRecetaRef}
            />
@@ -102,10 +101,10 @@ const EditarReceta = () => {
           <Form.Label>Categorías*</Form.Label>
           <Form.Select value={receta.categoria} onChange={e=>setReceta({...receta,categoria: e.target.value})}>
             <option value=''>Seleccione una opcion</option>
-            <option value='bebida-caliente'>Almuerzos</option>
-            <option value='bebida-fria'>Cenas</option>
-            <option value='dulce'>Postres</option>
-            <option value='salado'>Dips</option>
+            <option value='Almuerzos'>Almuerzos</option>
+            <option value='Cenas'>Cenas</option>
+            <option value='Postres'>Postres</option>
+            <option value='Dips'>Dips</option>
           </Form.Select>
         </Form.Group>
         <Button variant="primary" type="submit">

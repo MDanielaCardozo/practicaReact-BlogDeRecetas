@@ -47,7 +47,6 @@ const ItemReceta = ({receta, consultarAPI}) => {
       <tr>
         <td>{_id}</td>
         <td>{nombreReceta}</td>
-        <td>{precio}</td>
         <td className="truncate">{imagen}</td>
         <td>{categoria}</td>
         <td>
