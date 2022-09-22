@@ -8,7 +8,7 @@ const CardReceta = ({ receta }) => {
         <Card.Img variant="top" src={receta.imagen} className="img-fluid"/>
         <Card.Body>
           <Card.Title>{receta.nombreReceta}</Card.Title>
-          <Card.Text>
+          <Card.Text className='truncate'>
             {receta.ingredientes}
             {receta.descripcion}
           </Card.Text>
