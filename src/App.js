@@ -8,6 +8,7 @@ import AdministrarRecetas from "./components/views/receta/AdministrarRecetas";
 import CrearReceta from "./components/views/receta/CrearReceta";
 import EditarReceta from "./components/views/receta/EditarReceta";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/views/Home.css'
 
 function App() {
   return (

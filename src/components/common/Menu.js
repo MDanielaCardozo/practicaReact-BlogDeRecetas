@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Menu = () => {
     return (
-        <Navbar bg="danger" variant='dark' expand="lg">
+        <Navbar bg="" variant='dark' expand="lg">
         <Container>
           <Navbar.Brand as={Link} to='/'>Blog de recetas</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

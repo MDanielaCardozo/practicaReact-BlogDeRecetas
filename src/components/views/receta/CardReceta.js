@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const CardReceta = ({ receta }) => {
   return (
-    <Card className='my-4'>
+    <Card className='my-4 text-bg-dark'>
         <Card.Img variant="top" src={receta.imagen} className="img-fluid"/>
         <Card.Body>
           <Card.Title>{receta.nombreReceta}</Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+            {receta.ingredientes}
+            {receta.descripcion}
           </Card.Text>
         </Card.Body>
         <Card.Footer>

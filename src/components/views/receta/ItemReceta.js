@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ItemReceta = ({receta, consultarAPI}) => {
 
     console.log(receta);
-    const{nombreReceta, _id, categoria, imagen} = {...receta}
+    const{nombreReceta, _id, categoria, imagen,ingredientes, descripcion} = {...receta}
     const URL = process.env.REACT_APP_API_BLOGDERECETAS;
 
     const handleDelete = () => {
@@ -49,6 +49,8 @@ const ItemReceta = ({receta, consultarAPI}) => {
         <td>{nombreReceta}</td>
         <td className="truncate">{imagen}</td>
         <td>{categoria}</td>
+        <td className="truncate">{ingredientes}</td>
+        <td className="truncate">{descripcion}</td>
         <td>
           <Link to={`/administrar/receta/editar/${_id}`} className='btn btn-warning me-2'>Editar</Link>
           <Button variant="danger" onClick={handleDelete}>Borrar</Button>

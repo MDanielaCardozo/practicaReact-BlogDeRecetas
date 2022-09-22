@@ -37,16 +37,18 @@ const AdministrarRecetas = () => {
       </div>
       <hr />
       <Table responsive striped bordered hover>
-        <thead>
+        <thead className="bg-light">
           <tr>
             <th>Cod.</th>
             <th>Receta</th>
             <th>Url de imagen</th>
             <th>Categoria</th>
+            <th>Ingredientes</th>
+            <th>Descripción</th>
             <th>Opciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-light">
           {/* aqui tengo que hacer un map */}
           {
             recetas.map((receta)=><ItemReceta key={receta._id} receta={receta} consultarAPI={consultarAPI}></ItemReceta>)

@@ -14,6 +14,8 @@ const EditarReceta = () => {
     //Crear variable de referencia(reemplazo de state)
     const nombreRecetaRef = useRef('');
     const imagenRef = useRef('');
+    const ingredientesRef = useRef('');
+    const descripcionRef = useRef('');
     //navigate
     const navegacion = useNavigate();
 
@@ -44,7 +46,9 @@ const EditarReceta = () => {
             const recetaEditar = {
                 nombreReceta: nombreRecetaRef.current.value,
                 imagen: imagenRef.current.value,
-                categoria: receta.categoria
+                categoria: receta.categoria,
+                ingredientes: ingredientesRef.current.value,
+                descripcion: descripcionRef.current.value
             }
             console.log(recetaEditar);
             //pedir a la API la actualizacion
@@ -106,6 +110,24 @@ const EditarReceta = () => {
             <option value='Postres'>Postres</option>
             <option value='Dips'>Dips</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formIngredientes">
+          <Form.Label>Ingredientes*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: Mariscos 300gr, calamares 200gr"
+            defaultValue={receta.ingredientes}
+            ref={ingredientesRef}
+           />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formDescripcion">
+          <Form.Label>Descripción*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: Cocción"
+            defaultValue={receta.descripcion}
+            ref={descripcionRef}
+           />
         </Form.Group>
         <Button variant="primary" type="submit">
           Guardar

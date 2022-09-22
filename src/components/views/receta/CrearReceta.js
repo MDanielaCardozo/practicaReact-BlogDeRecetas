@@ -9,6 +9,8 @@ const CrearReceta = () => {
   const [nombreReceta, setNombreReceta] = useState("");
   const [imagen, setImagen] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [ingredientes, setIngredientes] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const [msjError, setMsjError] = useState(false);
   //variable de entorno con la direccion de mi api
   const URL = process.env.REACT_APP_API_BLOGDERECETAS;
@@ -25,7 +27,9 @@ const CrearReceta = () => {
     const nuevaReceta = {
       nombreReceta,
       imagen,
-      categoria
+      categoria,
+      ingredientes,
+      descripcion
     }
 
     console.log(nuevaReceta);
@@ -91,6 +95,22 @@ const CrearReceta = () => {
             <option value='Postres'>Postres</option>
             <option value='Dips'>Dips</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formIngredientes">
+          <Form.Label>Ingredientes*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: Mariscos, calamares"
+            onChange={(e) => setIngredientes(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formDescripcion">
+          <Form.Label>Descripción*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: Cocción"
+            onChange={(e) => setDescripcion(e.target.value)}
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
           Guardar

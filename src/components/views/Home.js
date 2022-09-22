@@ -23,7 +23,7 @@ const Home = () => {
   }
   
   return (
-    <div className="container">
+    <div className="container blog">
       <h1 className="display-4 m-4">Pagina principal</h1>
       <hr />
       <Row xs={1} md={4} className="g-4">

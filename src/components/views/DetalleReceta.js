@@ -26,7 +26,7 @@ const DetalleReceta = () => {
         }
     }
     return (
-        <Card className='container my-5'>
+        <Card className='container my-5 text-bg-dark'>
             <Row className='w-75'>
                 <Col md={6}>
                     <img src={receta.imagen} alt={receta.nombreReceta} className="w-100" />
@@ -35,6 +35,8 @@ const DetalleReceta = () => {
                 <h3>{receta.nombreReceta}</h3>
                 <hr/>
                 <Badge bg="success">{receta.categoria}</Badge>
+                <p className='m-4'>{receta.ingredientes}</p>
+                <p className='m-4'>{receta.descripcion}</p>
                 </Col>
             </Row>
         </Card>
