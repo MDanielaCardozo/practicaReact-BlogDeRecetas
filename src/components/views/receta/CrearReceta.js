@@ -67,9 +67,9 @@ const CrearReceta = () => {
   
   return (
     <section className="container">
-      <h1 className="display-4 mt-5">Nueva Receta</h1>
+      <h1 className="display-4 mt-5 text-black">Nueva Receta</h1>
       <hr />
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className='bg p-3'>
         <Form.Group className="mb-3" controlId="formNombreReceta">
           <Form.Label>Nombre de la Receta*</Form.Label>
           <Form.Control
